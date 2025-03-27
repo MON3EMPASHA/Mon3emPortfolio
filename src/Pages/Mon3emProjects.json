@@ -1,0 +1,76 @@
+[
+  {
+    "title": "Kinder Ride",
+    "description": "KinderRide is a real-time school transportation tracking system, ensuring safe and monitored journeys for children with live updates for parents and schools.",
+    "Image": "https://i.postimg.cc/yx4j6SNH/image.png",
+    "TechStack": [
+      "MERN",
+      "MongoDB",
+      "Express Js",
+      "React",
+      "Node.js",
+      "Tailwind CSS"
+    ],
+    "live demo": "https://routy-seven.vercel.app/",
+    "github demo": "https://github.com/Mohamed-Ibrahim183/Routy.git"
+  },
+  {
+    "title": "Oral Radiology",
+    "description": "Oral Radiology is a platform for the Faculty of Dentistry at MSA University where students upload dental radiographs for professors to evaluate and grade, streamlining assessment and feedback.",
+    "Image": "https://i.postimg.cc/QdqkxhNP/image.png",
+    "TechStack": ["React", "PHP", "Bootstrap", "MySQL"],
+    "live demo": "https://msaoralradiology.netlify.app/",
+    "github demo": "https://github.com/MON3EMPASHA/OralRadiologyProject2.git",
+    "video demo": ""
+  },
+
+  {
+    "title": "Searching Algorithms Simulator",
+    "description": "AI Search Algorithm Simulator is a Python-based visualization tool using Tkinter and ttk. It allows users to create search trees and select different algorithms (BFS, DFS, UCS, A*, Greedy). The tool animates the search process, tracks the fringe, and highlights the optimal path.",
+    "Image": "https://i.postimg.cc/ZKnBDNvn/image.png",
+    "TechStack": ["Python", "Tkinter", "ttk"],
+    "live demo": "https://drive.google.com/file/d/1cApsasXE-9o_qpO78nlIvU_TRdhx6c5Z/view?usp=drive_link",
+    "github demo": "https://github.com/MON3EMPASHA/Ai-Searching-Algorithms-Simulator.git"
+  },
+  {
+    "title": "1945-Airforce Desktop Game",
+    "description": "1945-Airforce is a desktop game built using C#. It is a clone of the popular arcade game 1945, where players control a plane to defeat enemy aircraft and bosses.",
+    "Image": "https://i.postimg.cc/KcL77zsC/image.png",
+    "TechStack": ["C#"],
+    "live demo": "https://drive.google.com/file/d/1k20jRBtIv0gnvO-1stEeHeMBJO_c8Be1/view?usp=sharing",
+    "github demo": "https://github.com/MON3EMPASHA/1945-Air-Force.git"
+  },
+  {
+    "title": "Explore Egypt",
+    "description": "Explore Egypt is a frontend website showcasing Egypt’s top tourist and historical sites. It provides detailed information, images, and travel tips, helping visitors explore the city's rich heritage. Future updates will enhance functionality for a more interactive experience.",
+    "Image": "https://i.postimg.cc/bYT6L7tq/image.png",
+    "TechStack": ["HTML", "CSS", "Js"],
+    "live demo": "https://mon3empasha.github.io/exploreegypt/",
+    "github demo": "https://github.com/MON3EMPASHA/project2",
+    "video demo": ""
+  },
+
+  {
+    "title": "Sushi World",
+    "description": "Sushi World is a website for a sushi restaurant, allowing customers to browse the menu and explore available dishes.",
+    "Image": "https://i.postimg.cc/Wp8q1kzw/image.png",
+    "TechStack": [
+      "MERN",
+      "MongoDB",
+      "Express Js",
+      "React",
+      "Node.js",
+      "Bootstrap"
+    ],
+    "live demo": "https://sushi-world.netlify.app/",
+    "github demo": ""
+  },
+  {
+    "title": "Flappy Bird",
+    "description": "Flappy Bird is a clone of the popular mobile game, built using HTML, CSS, and JavaScript.",
+    "Image": "https://i.postimg.cc/s2kMQPCv/R.jpg",
+    "TechStack": ["HTML", "CSS", "Js"],
+    "live demo": "https://mon3empasha.github.io/flappy-bird/",
+    "github demo": "https://github.com/MON3EMPASHA/flappy-bird.git"
+  }
+]
