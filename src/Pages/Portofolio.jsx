@@ -8,6 +8,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CardProject from "../components/CardProject";
+import EducationCard from "../components/EducationCard";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,7 +16,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 // import Certificate from "../components/Certificate";
 import { Code, Award, Boxes } from "lucide-react";
-
+import displayedCertificates from "./certificates";
 // Import the JSON file
 import Mon3emProjects from "./Mon3emProjects.json";
 
@@ -153,7 +154,14 @@ const techStacks = [
     icon: "https://img.icons8.com/?size=100&id=fAMVO_fuoOuC&format=png&color=000000",
     language: "PHP",
   },
-
+  {
+    icon: "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000",
+    language: "MySQL",
+  },
+  {
+    icon: "https://i.postimg.cc/fbHttnsh/phpmyadmin-icon-5605.png",
+    language: "PhpMyAdmin",
+  },
   // Programming Languages
   {
     icon: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000",
@@ -182,6 +190,10 @@ const techStacks = [
   {
     icon: "https://i.postimg.cc/MZffbt81/problem-Solving.png",
     language: "Problem Solving",
+  },
+  {
+    icon: "https://i.postimg.cc/V6LqpWfz/OIP-2-removebg-preview.png",
+    language: "Data Structures",
   },
 ];
 
@@ -336,7 +348,7 @@ export default function FullWidthTabs() {
               icon={
                 <Award className="mb-2 w-5 h-5 transition-all duration-300" />
               }
-              label="Certificates"
+              label="Education"
               {...a11yProps(1)}
             />
           </Tabs>
@@ -428,12 +440,61 @@ export default function FullWidthTabs() {
               </div>
             </TabPanel>
           </SwiperSlide>
-          {/* Certificates Tab */}
+          {/* Education Tab */}
           <SwiperSlide>
-            <TabPanel value={value} index={1}>
+            <TabPanel value={value} index={2}>
               <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4">
                   {/* Add certificate content here */}
+                  {/* {displayedCertificates.map((certificate, index) => (
+                    <div
+                      key={index}
+                      data-aos={
+                        index % 3 === 0
+                          ? "fade-up-right"
+                          : index % 3 === 1
+                          ? "fade-up"
+                          : "fade-up-left"
+                      }
+                      data-aos-duration={
+                        index % 3 === 0
+                          ? "1000"
+                          : index % 3 === 1
+                          ? "1200"
+                          : "1000"
+                      }
+                    >
+                      <Certificate ImgSertif={certificate.Img} />
+                    </div>
+                  ))} */}
+                  {displayedCertificates.map((certificate, index) => (
+                    <div
+                      key={index}
+                      data-aos={
+                        index % 3 === 0
+                          ? "fade-up-right"
+                          : index % 3 === 1
+                          ? "fade-up"
+                          : "fade-up-left"
+                      }
+                      data-aos-duration={
+                        index % 3 === 0
+                          ? "1000"
+                          : index % 3 === 1
+                          ? "1200"
+                          : "1000"
+                      }
+                    >
+                      <EducationCard
+                        Img={certificate.Img}
+                        Title={certificate.Title}
+                        Description={certificate.description}
+                        Link={certificate["live demo"]}
+                        TechStack={certificate.TechStack}
+                        Github={certificate["github demo"]}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </TabPanel>

@@ -251,12 +251,13 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I am a third-year Computer Science student at MSA University and a
-              MERN Stack developer skilled in React.js, Vue.js, Node.js, and
-              Express.js. I have experience in backend architecture, database
-              management, AI, Machine Learning, and NLP. I enjoy competitive
-              programming, solving complex problems, and building intelligent
-              solutions.
+              I&apos;m a third-year Computer Science student at MSA University
+              and a full-stack developer proficient in the MERN stack, PHP, and
+              MySQL. I specialize in building scalable and efficient web
+              applications, ensuring seamless front-end and back-end
+              integration. Passionate about crafting innovative digital
+              solutions, I continuously explore modern technologies to enhance
+              performance and user experience.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">

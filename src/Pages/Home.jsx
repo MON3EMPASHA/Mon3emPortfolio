@@ -1,28 +1,12 @@
 import { useState, useEffect, useCallback, memo } from "react";
 import PropTypes from "prop-types";
-import { Github, Linkedin, Instagram } from "lucide-react";
-// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Github, Linkedin, Instagram, Phone, Mail } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Mon3em from "../assets/Mana3emo.jpeg";
 import { Code, FileText } from "lucide-react";
 const MainTitle = memo(() => (
   <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-    {/* <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-      <span className="relative inline-block">
-        <span className="absolute -inset-2 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] blur-2xl opacity-20"></span>
-        <span className="relative bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] bg-clip-text text-transparent">
-          Hello, I&apos;m
-        </span>
-      </span>
-      <br />
-      <span className="relative inline-block mt-2">
-        <span className="absolute -inset-2 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] blur-2xl opacity-20"></span>
-        <span className="relative bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-          Abdelmonem
-        </span>
-      </span>
-    </h1> */}
     <h2
       className="text-3xl sm:text-4xl lg:text-5xl font-bold"
       data-aos="fade-right"
@@ -117,20 +101,23 @@ CTAButton.propTypes = {
   icon: PropTypes.elementType.isRequired,
 };
 
-const SocialLink = memo(({ icon: Icon, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer">
-    <button className="group relative p-3">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
-      <div className="relative rounded-xl bg-black/50 backdrop-blur-xl p-2 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
-        <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-      </div>
-    </button>
-  </a>
-));
+const SocialLink = memo(({ icon: Icon, link }) => {
+  return (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <button className="group relative p-3">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+        <div className="relative rounded-xl bg-black/50 backdrop-blur-xl p-2 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
+          <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+        </div>
+      </button>
+    </a>
+  );
+});
 SocialLink.displayName = "SocialLink";
 SocialLink.propTypes = {
   icon: PropTypes.elementType.isRequired,
   link: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };
 
 // Constants
@@ -139,21 +126,23 @@ const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 const WORDS = [
   "Computer Science Student at MSA",
+  "MERN Stack Developer",
   "Frontend Developer",
   "Backend Developer",
 ];
-const TECH_STACK = [
-  // "MERN Stack ",
-  // "React & Vue.js",
-  // "Node.js & Express.js",
-  // "MongoDB & MySQL",
-  // "Tailwind",
-  // "ML & NLP",
-];
+
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/MON3EMPASHA" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/abdelmonem-hatem/" },
   { icon: Instagram, link: "https://www.instagram.com/abdelmonem_hatem/" },
+  {
+    link: "mailto:Abdelmonem5hatem@gmail.com",
+    icon: Mail,
+  },
+  {
+    link: "tel:01093820412",
+    icon: Phone,
+  },
 ];
 
 const Home = () => {
@@ -209,24 +198,7 @@ const Home = () => {
       isTyping ? TYPING_SPEED : ERASING_SPEED
     );
     return () => clearTimeout(timeout);
-  }, [handleTyping]);
-
-  // Lottie configuration
-  // const lottieOptions = {
-  //   src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
-  //   loop: true,
-  //   autoplay: true,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //     progressiveLoad: true,
-  //   },
-  //   style: { width: "100%", height: "100%" },
-  //   className: `w-full h-full transition-all duration-500 ${
-  //     isHovering
-  //       ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
-  //       : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
-  //   }`,
-  // };
+  }, [handleTyping, isTyping]);
 
   return (
     <div className="min-h-screen bg-[#030014] overflow-hidden pt-20" id="Home">
@@ -236,7 +208,7 @@ const Home = () => {
         }`}
       >
         <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20 mb-8">
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20 mt-10 lg:mt-0 mb-40 lg:mb-2">
             {/* Left Column */}
             <div
               className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0"
@@ -264,52 +236,37 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  Third-year Computer Science student at MSA University and MERN
-                  Stack developer, expanding skills in AI, ML, and NLP for
-                  intelligent solutions.
-                </div>
-
-                {/* Tech Stack */}
-                <div
-                  className="flex flex-wrap gap-3 justify-start"
-                  data-aos="fade-up"
-                  data-aos-delay="1200"
-                >
-                  {TECH_STACK.map((tech, index) => (
-                    <TechStack key={index} tech={tech} />
-                  ))}
+                  I&apos;m a third-year Computer Science student at MSA
+                  University and a full-stack developer proficient in the MERN
+                  stack. I specialize in building scalable and efficient web
+                  applications, ensuring seamless front-end and back-end
+                  integration. Passionate about crafting innovative digital
+                  solutions..
                 </div>
 
                 {/* CTA Buttons */}
                 <div
-                  className="flex flex-row gap-3 w-full justify-start"
+                  className="flex flex-wrap gap-3 w-full justify-center sm:justify-start"
                   data-aos="fade-up"
                   data-aos-delay="1400"
                 >
-                  {/* <CTAButton
-                    href="#Portofolio"
-                    text="Projects"
-                    icon={ExternalLink}
-                  />
-                  <CTAButton href="#Contact" text="Contact" icon={Mail} /> */}
                   <a
                     href="https://drive.google.com/drive/folders/1Tb2gV9Ifq2QuwebKzbfyXXSDdEkPX2Ai?usp=sharing"
-                    className="w-full lg:w-auto"
-                    target="_blank"
+                    className="w-full sm:w-auto"
                   >
                     <button
                       data-aos="fade-up"
                       data-aos-duration="800"
-                      className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
+                      className="w-full sm:w-auto px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
                     >
                       <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
                     </button>
                   </a>
-                  <a href="#Portofolio" className="w-full lg:w-auto">
+                  <a href="#Portofolio" className="w-full sm:w-auto">
                     <button
                       data-aos="fade-up"
                       data-aos-duration="1000"
-                      className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#3b82f6]/50 text-[#3b82f6] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#3b82f6]/10 animate-bounce-slow delay-200"
+                      className="w-full sm:w-auto px-6 py-2 sm:py-3 rounded-lg border border-[#3b82f6]/50 text-[#3b82f6] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 hover:bg-[#3b82f6]/10 animate-bounce-slow delay-200"
                     >
                       <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
                     </button>
@@ -318,12 +275,18 @@ const Home = () => {
 
                 {/* Social Links */}
                 <div
-                  className="hidden sm:flex gap-4 justify-start"
+                  className="text-center sm:flex gap-4 justify-start"
                   data-aos="fade-up"
                   data-aos-delay="1600"
                 >
                   {SOCIAL_LINKS.map((social, index) => (
-                    <SocialLink key={index} {...social} />
+                    <SocialLink
+                      key={index}
+                      icon={social.icon}
+                      link={social.link}
+                      type={social.type}
+                      label={social.label}
+                    />
                   ))}
                 </div>
               </div>
