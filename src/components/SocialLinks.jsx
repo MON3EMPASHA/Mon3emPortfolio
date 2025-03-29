@@ -1,4 +1,11 @@
-import { Linkedin, Github, Instagram, ExternalLink } from "lucide-react";
+import {
+  Linkedin,
+  Github,
+  Instagram,
+  ExternalLink,
+  Mail,
+  Phone,
+} from "lucide-react";
 
 const socialLinks = [
   {
@@ -29,12 +36,30 @@ const socialLinks = [
     color: "#ffffff",
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
   },
+  {
+    name: "email",
+    displayName: "Email",
+    subText: "abdelmonem5hatem@gmail.com",
+    icon: Mail,
+    url: "mailto:abdelmonem5hatem@gmail.com",
+    color: "#ffffff",
+    gradient: "from-[#1e3a8a] to-[#3b82f6]",
+  },
+  {
+    name: "phone",
+    displayName: "Phone",
+    subText: "01093820412",
+    icon: Phone,
+    url: "tel:01093820412",
+    color: "#ffffff",
+    gradient: "from-[#1e3a8a] to-[#3b82f6]",
+  },
 ];
 
 const SocialLinks = () => {
   const linkedIn = socialLinks.find((link) => link.isPrimary);
   const otherLinks = socialLinks.filter((link) => !link.isPrimary);
-  const [instagram, github] = otherLinks;
+  const [instagram, github, email, phone] = otherLinks;
 
   return (
     <div className="w-full bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl">
@@ -103,9 +128,9 @@ const SocialLinks = () => {
           </div>
         </a>
 
-        {/* Second Row - Instagram & YouTube */}
-        <div className="grid grid-cols-1  gap-4">
-          {[instagram].map((link) => (
+        {/* Second Row - Instagram and Email */}
+        <div className="grid grid-cols-2 gap-4">
+          {[email, github].map((link) => (
             <a
               key={link.name}
               href={link.url}
@@ -160,9 +185,9 @@ const SocialLinks = () => {
           ))}
         </div>
 
-        {/* Third Row - GitHub & TikTok */}
-        <div className="grid grid-cols-1  gap-4">
-          {[github].map((link) => (
+        {/* Third Row - GitHub and Phone */}
+        <div className="grid grid-cols-2 gap-4">
+          {[phone, instagram].map((link) => (
             <a
               key={link.name}
               href={link.url}

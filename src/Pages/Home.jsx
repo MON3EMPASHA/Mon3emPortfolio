@@ -251,7 +251,7 @@ const Home = () => {
                   data-aos-delay="1400"
                 >
                   <a
-                    href="https://drive.google.com/drive/folders/1Tb2gV9Ifq2QuwebKzbfyXXSDdEkPX2Ai?usp=sharing"
+                    href="https://drive.google.com/file/d/1E5yVc5DYkprZDTp0Z8ad7-0EgCzqcvv6/view?usp=sharing"
                     className="w-full sm:w-auto"
                   >
                     <button

@@ -1,19 +1,26 @@
-import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight } from "lucide-react";
+// import { Link } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import PropTypes from "prop-types";
 
-const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
+const CardProject = ({
+  Img,
+  Title,
+  Description,
+  Link: ProjectLink,
+  TechStack,
+}) => {
   const handleLiveDemo = (e) => {
     if (!ProjectLink) {
       e.preventDefault();
     }
   };
 
-  const handleDetails = (e) => {
-    if (!id) {
-      e.preventDefault();
-    }
-  };
+  // const handleDetails = (e) => {
+  //   if (!id) {
+  //     e.preventDefault();
+  //   }
+  // };
 
   return (
     <div className="group relative w-full">
@@ -30,6 +37,22 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
           </div>
 
           <div className="mt-4 space-y-3">
+            {/* Tech Stack */}
+            {TechStack && TechStack.length > 0 && (
+              <div className="mt-2">
+                <div className="flex flex-wrap gap-2">
+                  {TechStack.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs rounded-md bg-blue-900/30 text-blue-300 border border-blue-700/50"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Project Title */}
             <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 bg-clip-text text-transparent">
               {Title}
             </h3>
@@ -55,8 +78,8 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
                   Demo Not Available
                 </span>
               )}
-
-              {id ? (
+              {/* Details Page */}
+              {/* {id ? (
                 <Link
                   to={`/project/${id}`}
                   onClick={handleDetails}
@@ -69,7 +92,7 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
                 <span className="text-gray-500 text-sm">
                   Details Not Available
                 </span>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -86,5 +109,6 @@ CardProject.propTypes = {
   Description: PropTypes.string.isRequired,
   Link: PropTypes.string,
   id: PropTypes.number,
+  TechStack: PropTypes.array,
 };
 export default CardProject;

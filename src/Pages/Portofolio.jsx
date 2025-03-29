@@ -150,6 +150,7 @@ const techStacks = [
   { icon: "MUI.svg", language: "Material UI" },
 
   // Backend Development
+
   {
     icon: "https://img.icons8.com/?size=100&id=fAMVO_fuoOuC&format=png&color=000000",
     language: "PHP",
@@ -177,6 +178,10 @@ const techStacks = [
   },
 
   // Version Control & Collaboration
+  {
+    icon: "https://i.postimg.cc/7YKKYxHN/postman-icon-svgrepo-com.png",
+    language: "Postman",
+  },
   {
     icon: "https://img.icons8.com/?size=100&id=lkh3AbJLmFpp&format=png&color=000000",
     language: "Github",
