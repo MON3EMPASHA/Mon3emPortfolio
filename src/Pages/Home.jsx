@@ -253,6 +253,7 @@ const Home = () => {
                   <a
                     href="https://drive.google.com/file/d/1E5yVc5DYkprZDTp0Z8ad7-0EgCzqcvv6/view?usp=sharing"
                     className="w-full sm:w-auto"
+                    target="_blank"
                   >
                     <button
                       data-aos="fade-up"
