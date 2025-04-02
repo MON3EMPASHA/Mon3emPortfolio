@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
-// import SwipeableViews from "react-swipeable-views";
-// import { useTheme } from "@mui/material/styles";
+import techStacks from "./data/TechStacks";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -14,11 +13,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-// import Certificate from "../components/Certificate";
-import { Code, Award, Boxes } from "lucide-react";
-import displayedCertificates from "./certificates";
+import Certificate from "../components/Certificate";
+import { Code, Award, Boxes, GraduationCapIcon } from "lucide-react";
+import { Educations, displayedCertificates } from "./data/certificates";
 // Import the JSON file
-import Mon3emProjects from "./Mon3emProjects.json";
+import Mon3emProjects from "./data/Mon3emProjects.json";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const ToggleButton = ({ onClick, isShowingMore }) => (
   <button
@@ -115,93 +115,6 @@ function a11yProps(index) {
   };
 }
 
-const techStacks = [
-  // Core Full-Stack Technologies (MERN Stack)
-  { icon: "https://i.postimg.cc/HsGdG980/react.png", language: "ReactJS" },
-  { icon: "https://i.postimg.cc/W18vkRWS/express.png", language: "Express" },
-  { icon: "https://i.postimg.cc/rpH71qSG/nodejs.png", language: "Node JS" },
-  { icon: "https://i.postimg.cc/zDhYkH2y/mongo1.png", language: "MongoDB" },
-
-  // Frontend Development
-  { icon: "https://i.postimg.cc/HsL4gbGx/html-1.png", language: "HTML" },
-  { icon: "https://i.postimg.cc/9FxbRJPZ/icons8-css-144.png", language: "CSS" },
-  {
-    icon: "https://i.postimg.cc/dQ6mp4xp/javascript.png",
-    language: "JavaScript",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=Xf1sHBmY73hA&format=png&color=000000",
-    language: "TypeScript",
-  },
-
-  // Frontend Frameworks & Tools
-  {
-    icon: "https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png&color=000000",
-    language: "Vite",
-  },
-  {
-    icon: "https://i.postimg.cc/bwJ63KYm/tailwind.png",
-    language: "Tailwind CSS",
-  },
-  {
-    icon: "https://i.postimg.cc/jjyyXXf8/bootstrap.png",
-    language: "Bootstrap",
-  },
-  { icon: "MUI.svg", language: "Material UI" },
-
-  // Backend Development
-
-  {
-    icon: "https://img.icons8.com/?size=100&id=fAMVO_fuoOuC&format=png&color=000000",
-    language: "PHP",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000",
-    language: "MySQL",
-  },
-  {
-    icon: "https://i.postimg.cc/fbHttnsh/phpmyadmin-icon-5605.png",
-    language: "PhpMyAdmin",
-  },
-  // Programming Languages
-  {
-    icon: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000",
-    language: "Python",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=55251&format=png&color=000000",
-    language: "C#",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=TpULddJc4gTh&format=png&color=000000",
-    language: "C++",
-  },
-
-  // Version Control & Collaboration
-  {
-    icon: "https://i.postimg.cc/7YKKYxHN/postman-icon-svgrepo-com.png",
-    language: "Postman",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=lkh3AbJLmFpp&format=png&color=000000",
-    language: "Github",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
-    language: "Git",
-  },
-
-  // Additional Skills
-  {
-    icon: "https://i.postimg.cc/MZffbt81/problem-Solving.png",
-    language: "Problem Solving",
-  },
-  {
-    icon: "https://i.postimg.cc/V6LqpWfz/OIP-2-removebg-preview.png",
-    language: "Data Structures",
-  },
-];
-
 export default function FullWidthTabs() {
   // const theme = useTheme();
   const [value, setValue] = useState(0);
@@ -232,7 +145,8 @@ export default function FullWidthTabs() {
   const displayedProjects = showAllProjects
     ? Mon3emProjects
     : Mon3emProjects.slice(0, initialItems);
-
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
       className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden"
@@ -296,7 +210,8 @@ export default function FullWidthTabs() {
             onChange={handleChange}
             textColor="secondary"
             indicatorColor="secondary"
-            variant="fullWidth"
+            variant={isSmallScreen ? "scrollable" : "fullWidth"}
+            scrollButtons={isSmallScreen ? "auto" : false}
             sx={{
               minHeight: "70px",
               "& .MuiTab-root": {
@@ -309,6 +224,7 @@ export default function FullWidthTabs() {
                 zIndex: 1,
                 margin: "8px",
                 borderRadius: "12px",
+                backgroundColor: "transparent",
                 "&:hover": {
                   color: "#ffffff",
                   backgroundColor: "rgba(30, 58, 138, 0.1)",
@@ -337,24 +253,31 @@ export default function FullWidthTabs() {
           >
             <Tab
               icon={
-                <Code className="mb-2 w-5 h-5 transition-all duration-300" />
+                <Code className="mb-2 w-4 h-5 transition-all duration-300" />
               }
               label="Projects"
               {...a11yProps(0)}
             />
             <Tab
               icon={
-                <Boxes className="mb-2 w-5 h-5 transition-all duration-300" />
+                <Boxes className="mb-2 w-4 h-5 transition-all duration-300" />
               }
               label="Skills"
               {...a11yProps(1)}
             />
             <Tab
               icon={
-                <Award className="mb-2 w-5 h-5 transition-all duration-300" />
+                <Award className="mb-2 w-4 h-5 transition-all duration-300" />
+              }
+              label="Certificates"
+              {...a11yProps(2)}
+            />
+            <Tab
+              icon={
+                <GraduationCapIcon className="mb-2 w-5 h-5 transition-all duration-300" />
               }
               label="Education"
-              {...a11yProps(1)}
+              {...a11yProps(3)}
             />
           </Tabs>
         </AppBar>
@@ -445,13 +368,13 @@ export default function FullWidthTabs() {
               </div>
             </TabPanel>
           </SwiperSlide>
-          {/* Education Tab */}
+          {/* Certificates Tab */}
           <SwiperSlide>
             <TabPanel value={value} index={2}>
               <div className="container mx-auto flex justify-center items-center overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4">
                   {/* Add certificate content here */}
-                  {/* {displayedCertificates.map((certificate, index) => (
+                  {displayedCertificates.map((certificate, index) => (
                     <div
                       key={index}
                       data-aos={
@@ -471,8 +394,17 @@ export default function FullWidthTabs() {
                     >
                       <Certificate ImgSertif={certificate.Img} />
                     </div>
-                  ))} */}
-                  {displayedCertificates.map((certificate, index) => (
+                  ))}
+                </div>
+              </div>
+            </TabPanel>
+          </SwiperSlide>
+          {/* Education Tab */}
+          <SwiperSlide>
+            <TabPanel value={value} index={3}>
+              <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-4">
+                  {Educations.map((certificate, index) => (
                     <div
                       key={index}
                       data-aos={
@@ -500,6 +432,28 @@ export default function FullWidthTabs() {
                       />
                     </div>
                   ))}
+                  {/* Add certificate content here */}
+                  {/* {displayedCertificates.map((certificate, index) => (
+                    <div
+                      key={index}
+                      data-aos={
+                        index % 3 === 0
+                          ? "fade-up-right"
+                          : index % 3 === 1
+                          ? "fade-up"
+                          : "fade-up-left"
+                      }
+                      data-aos-duration={
+                        index % 3 === 0
+                          ? "1000"
+                          : index % 3 === 1
+                          ? "1200"
+                          : "1000"
+                      }
+                    >
+                      <Certificate ImgSertif={certificate.Img} />
+                    </div>
+                  ))} */}
                 </div>
               </div>
             </TabPanel>
