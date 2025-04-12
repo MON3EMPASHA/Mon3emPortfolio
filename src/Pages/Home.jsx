@@ -251,7 +251,7 @@ const Home = () => {
                   data-aos-delay="1400"
                 >
                   <a
-                    href="https://drive.google.com/file/d/1E5yVc5DYkprZDTp0Z8ad7-0EgCzqcvv6/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1isrXJ1-OKhTEmKbs94del9bydbG_6ow5/view?usp=drive_link"
                     className="w-full sm:w-auto"
                     target="_blank"
                   >
