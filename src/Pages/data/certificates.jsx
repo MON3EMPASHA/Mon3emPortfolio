@@ -14,6 +14,10 @@ const Educations = [
 ];
 const displayedCertificates = [
   {
+    Title: "Artificial Intelligence Ambassadors Program",
+    Img: "https://i.postimg.cc/2Sz4cf0b/AI-Ambassadors-NTI.jpg",
+  },
+  {
     Title: "React JS-MaharaTech",
     Img: "https://i.postimg.cc/wBc141dJ/React-JS-Mahara-Tech.png",
   },
