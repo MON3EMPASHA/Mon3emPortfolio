@@ -18,6 +18,10 @@ const displayedCertificates = [
     Img: "https://i.postimg.cc/2Sz4cf0b/AI-Ambassadors-NTI.jpg",
   },
   {
+    Title: "Applications of Artificial Intelligence",
+    Img: "https://i.postimg.cc/QdgbjFK1/Applications-of-Artificial-Intelligence-Impact.jpg",
+  },
+  {
     Title: "React JS-MaharaTech",
     Img: "https://i.postimg.cc/wBc141dJ/React-JS-Mahara-Tech.png",
   },
