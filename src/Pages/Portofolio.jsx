@@ -319,6 +319,7 @@ export default function FullWidthTabs() {
                         Link={project["live demo"]}
                         TechStack={project.TechStack}
                         Github={project["github demo"]}
+                        id={project.id}
                       />
                     </div>
                   ))}

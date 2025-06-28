@@ -1,13 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 
 const AnimatedBackground = () => {
   const blobRefs = useRef([]);
-  const initialPositions = [
+  const initialPositions = useMemo(() => [
     { x: -4, y: 0 },
     { x: -4, y: 0 },
     { x: 20, y: -8 },
     { x: 20, y: -8 },
-  ];
+  ], []);
 
   useEffect(() => {
     let requestId;
@@ -38,7 +38,7 @@ const AnimatedBackground = () => {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(requestId);
     };
-  }, []);
+  }, [initialPositions]);
 
   return (
     <div className="fixed inset-0 ">
