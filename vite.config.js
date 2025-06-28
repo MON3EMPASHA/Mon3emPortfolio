@@ -4,6 +4,7 @@ import { splitVendorChunkPlugin } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { copyFileSync, mkdirSync, readdirSync } from 'fs'
 import { join } from 'path'
+import fs from 'fs'
 
 // Plugin to copy static project pages
 const copyStaticPages = () => {
@@ -12,17 +13,23 @@ const copyStaticPages = () => {
     writeBundle() {
       try {
         const sourceDir = 'public/project'
-        const targetDir = 'dist/project'
+        const targetDir = 'dist'
         
-        // Create target directory
-        mkdirSync(targetDir, { recursive: true })
+        // Remove old dist/project folder if it exists
+        const oldProjectDir = join(targetDir, 'project')
+        if (fs.existsSync(oldProjectDir)) {
+          fs.rmSync(oldProjectDir, { recursive: true, force: true })
+          console.log('Removed old dist/project folder')
+        }
         
-        // Copy all HTML files
+        // Copy all HTML files to the root of dist
         const files = readdirSync(sourceDir)
         files.forEach(file => {
           if (file.endsWith('.html')) {
-            copyFileSync(join(sourceDir, file), join(targetDir, file))
-            console.log(`Copied: ${file} to dist/project/`)
+            // Create a new filename with project- prefix to avoid conflicts
+            const newFileName = `project-${file}`
+            copyFileSync(join(sourceDir, file), join(targetDir, newFileName))
+            console.log(`Copied: ${file} to dist/${newFileName}`)
           }
         })
       } catch (error) {

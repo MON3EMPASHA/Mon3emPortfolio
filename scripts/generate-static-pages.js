@@ -124,7 +124,7 @@ projectsData.forEach(project => {
   </body>
 </html>`;
   
-  // Write the file
+  // Write the file to public/project directory
   const filePath = path.join(projectDir, `${project.id}.html`);
   fs.writeFileSync(filePath, projectHTML);
   console.log(`Generated: ${filePath}`);

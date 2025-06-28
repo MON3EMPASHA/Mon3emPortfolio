@@ -5,11 +5,13 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Serve static project HTML files
 [[redirects]]
-  from = "/project/*"
-  to = "/project/:splat.html"
+  from = "/project/:id"
+  to = "/project-:id.html"
   status = 200
 
+# Fallback for all other routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
