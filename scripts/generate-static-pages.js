@@ -91,10 +91,38 @@ if (!fs.existsSync(projectDir)) {
 projectsData.forEach(project => {
   const metaTags = generateProjectMetaTags(project);
   
-  // Replace the title and add meta tags
-  let projectHTML = baseHTML
-    .replace('<title>MON3EM | Portfolio</title>', `<title>${project.title} - Abdelmonem Hatem Portfolio</title>`)
-    .replace('<!-- Sitemap -->', `<!-- Sitemap -->\n    ${metaTags}`);
+  // Create a clean HTML template for the project
+  let projectHTML = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Photo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="ZYNfZwMUiNwSMF3EMvY85bid2BVvB12uMMRfUNWw75A"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="rgb(3,0,20)" />
+    <meta name="msapplication-navbutton-color" content="rgb(3,0,20)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    
+    ${metaTags}
+
+    <title>${project.title} - Abdelmonem Hatem Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>`;
   
   // Write the file
   const filePath = path.join(projectDir, `${project.id}.html`);
