@@ -17,9 +17,49 @@ import SEO from "./components/SEO";
 import SkipToContent from "./components/SkipToContent";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
+  // Structured data for the main portfolio page
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdelmonem Hatem",
+    "jobTitle": "Full Stack Developer",
+    "description": "Computer Science Student at MSA University and MERN Stack Developer. Explore my portfolio showcasing web development projects and technical expertise.",
+    "url": "https://abdelmonem-hatem.netlify.app/",
+    "image": "https://i.postimg.cc/1zNsVQBL/portfolio.png",
+    "sameAs": [
+      "https://github.com/MON3EMPASHA",
+      "https://linkedin.com/in/abdelmonem-hatem"
+    ],
+    "knowsAbout": [
+      "MERN Stack",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "C#",
+      "Web Development",
+      "Full Stack Development",
+      "AI",
+      "ML",
+      "NLP",
+      "Natural Language Processing",
+    ],
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "MSA University"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    }
+  };
+
   return (
     <>
-      <SEO />
+      <SEO structuredData={structuredData} />
       <SkipToContent />
       <AnimatePresence mode="wait">
         {showWelcome && (

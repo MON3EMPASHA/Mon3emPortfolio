@@ -6,7 +6,8 @@ const SEO = ({
   description = "Computer Science Student at MSA University and MERN Stack Developer. Explore my portfolio showcasing web development projects and technical expertise.",
   keywords = "Abdelmonem Hatem, Full Stack Developer, MERN Stack, React, Node.js, Portfolio",
   image = "https://i.postimg.cc/1zNsVQBL/portfolio.png",
-  url = "https://abdelmonem-hatem.netlify.app/"
+  url = "https://abdelmonem-hatem.netlify.app/",
+  structuredData = null
 }) => {
   return (
     <Helmet>
@@ -42,6 +43,13 @@ const SEO = ({
       {/* Preconnect to external domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      
+      {/* Structured Data (JSON-LD) */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
     </Helmet>
   );
 };
@@ -52,6 +60,7 @@ SEO.propTypes = {
   keywords: PropTypes.string,
   image: PropTypes.string,
   url: PropTypes.string,
+  structuredData: PropTypes.object,
 };
 
 export default SEO; 
