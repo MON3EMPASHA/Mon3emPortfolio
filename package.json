@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate-static-pages.js && vite build",
+    "generate-pages": "node scripts/generate-static-pages.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "type-check": "tsc --noEmit"
