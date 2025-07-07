@@ -14,6 +14,10 @@ const Educations = [
 ];
 const displayedCertificates = [
   {
+    Title: "InnovEgypt Entrepreneurship Program",
+    Img: "https://i.postimg.cc/R08xX6cm/Innov-Egypt.png",
+  },
+  {
     Title: "Artificial Intelligence Ambassadors Program",
     Img: "https://i.postimg.cc/2Sz4cf0b/AI-Ambassadors-NTI.jpg",
   },
