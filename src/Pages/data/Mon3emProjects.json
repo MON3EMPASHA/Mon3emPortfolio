@@ -5,7 +5,7 @@
     "description": "This project presents an Arabic spelling correction system built using a sequence-to-sequence transformer model (T5) fine-tuned specifically for noisy text. To train the model, I scraped over 100,000 high-quality articles from the Youm7 news website, which served as clean reference data. I then generated synthetic noisy versions by injecting common spelling and typing errors to simulate real-world mistakes. The final model was trained on this parallel dataset to learn effective correction patterns. The system is deployed as a Streamlit web application and supports multiple input methods: manual text input, text file upload, OCR from images, and speech-to-text from audio recordings. It offers real-time correction output along with an Advanced evaluation metrics including accuracy , character error rate (CER), precision, recall, and F1 score.",
     "Image": "https://i.postimg.cc/QMnGLM1s/image.png",
     "DetailsImage": ["https://i.postimg.cc/QMnGLM1s/image.png","https://i.postimg.cc/J7x3RBtb/image.png","https://i.postimg.cc/9Q7qw4Xg/image.png","https://i.postimg.cc/wBz3t0G3/image.png","https://i.postimg.cc/g0GkcrxZ/image.png"],
-    "TechStack": ["NLP", "Python", "Streamlit"],
+    "TechStack": ["NLP", "Transformers","Python", "Streamlit"],
     "live demo": "https://arabic-noisy-text-correction.streamlit.app/",
     "github demo": ""
   },
@@ -31,6 +31,36 @@
   },
   {
     "id": 2,
+    "title": "Question-Answering-with-Transformers",
+    "description": "Interactive Web app for multilingual question answering using state-of-the-art Transformer models (BERT, DistilBERT, RoBERTa, DeBERTa, and multilingual BERT) for English and Arabic. Compare answers, try sample data, and explore chatbot-ready features.",
+    "Image": "https://i.postimg.cc/28qTYGpt/image.png",
+    "DetailsImage": "",
+    "TechStack": ["NLP","Transformers","Python","Streamlit"],
+    "live demo": "https://question-answering-with-transformers-by-mon3em.streamlit.app/",
+    "github demo": "https://github.com/MON3EMPASHA/Question-Answering-with-Transformers.git"
+  },
+  {
+    "id": 3,
+    "title": "Named Entity Recognition for News Articles",
+    "description": "A Streamlit web application that demonstrates Named Entity Recognition (NER) for news articles using spaCy models trained on the CoNLL-2003 dataset. The app allows users to input custom text and visualize recognized entities (Person, Organization, Location, Date, Misc) with both highlighted text and entity lists.",
+    "Image": "https://i.postimg.cc/TwgLQKBC/image.png",
+    "DetailsImage": ["https://i.postimg.cc/TwgLQKBC/image.png","https://i.postimg.cc/Wb2F6b8w/image.png","https://i.postimg.cc/bw5Zh0hm/image.png"],
+    "TechStack": ["NLP","spaCy","Python","Streamlit"],
+    "live demo": "https://ner-for-news-articles-trained-on-conll03-dataset-by-mon3em.streamlit.app/",
+    "github demo": "https://github.com/MON3EMPASHA/NER-for-New-Articles-trained-on-CoNLL03-Dataset.git"
+  },
+  {
+    "id": 4,
+    "title": "Movie Reviews Sentiment Analysis",
+    "description": "Classifies IMDb movie reviews as positive/negative using Logistic Regression (88.47% accuracy) and Naive Bayes models. Features TF-IDF vectorization, comprehensive text preprocessing, and a Streamlit web application for real-time sentiment prediction with detailed performance analysis and visualizations.",
+    "Image": "https://i.postimg.cc/1zxyBvP1/image.png",
+    "DetailsImage": ["https://i.postimg.cc/1zxyBvP1/image.png","https://i.postimg.cc/rpSMP5F0/image.png","https://i.postimg.cc/2y5YyJdh/image.png","https://i.postimg.cc/2SWD1nWc/image.png","https://i.postimg.cc/zf11K3SJ/image.png"],
+    "TechStack": ["NLP","Logistic Regression","Naive Bayes","TF-IDF"],
+    "live demo": "https://sentiment-analysis-for-movie-reviews-by-mon3em.streamlit.app/",
+    "github demo": "https://github.com/MON3EMPASHA/Sentiment-Analysis-for-Movie-Reviews.git"
+  },
+  {
+    "id": 5,
     "title": "Kinder Ride",
     "description": "KinderRide is a real-time school transportation tracking system, ensuring safe and monitored journeys for children with live updates for parents and schools.",
     "Image": "https://i.postimg.cc/yx4j6SNH/image.png",
@@ -40,7 +70,7 @@
     "github demo": "https://github.com/Mohamed-Ibrahim183/Routy.git"
   },
   {
-      "id": 3,
+      "id": 6,
     "title": "Oral Radiology",
     "description": "Oral Radiology is a platform for the Faculty of Dentistry at MSA University where students upload dental radiographs for professors to evaluate and grade, streamlining assessment and feedback.",
     "Image": "https://i.postimg.cc/QdqkxhNP/image.png",
@@ -51,7 +81,7 @@
     "video demo": ""
   },
   {
-    "id": 4,
+    "id": 7,
     "title": "Searching Algorithms Simulator",
     "description": "AI Search Algorithm Simulator is a Python-based visualization tool using Tkinter and ttk. It allows users to create search trees and select different algorithms (BFS, DFS, UCS, A*, Greedy). The tool animates the search process, tracks the fringe, and highlights the optimal path.",
     "Image": "https://i.postimg.cc/ZKnBDNvn/image.png",
@@ -61,7 +91,7 @@
     "github demo": "https://github.com/MON3EMPASHA/Ai-Searching-Algorithms-Simulator.git"
   },
   {
-    "id": 5,
+    "id": 8,
     "title": "1945-Airforce Desktop Game",
     "description": "1945-Airforce is a desktop game built using C#. It is a clone of the popular arcade game 1945, where players control a plane to defeat enemy aircraft and bosses.",
     "Image": "https://i.postimg.cc/KcL77zsC/image.png",
@@ -71,7 +101,7 @@
     "github demo": "https://github.com/MON3EMPASHA/1945-Air-Force.git"
   },
   {
-    "id": 6,
+    "id": 9,
     "title": "Sushi World",
     "description": "Sushi World is a website for a sushi restaurant, allowing customers to browse the menu and explore available dishes.",
     "Image": "https://i.postimg.cc/Wp8q1kzw/image.png", 
@@ -81,7 +111,7 @@
     "github demo": ""
   },
   {
-    "id": 7,
+    "id": 10,
     "title": "Explore Egypt",
     "description": "Explore Egypt is a frontend website showcasing Egypt's top tourist and historical sites. It provides detailed information, images, and travel tips, helping visitors explore the city's rich heritage. Future updates will enhance functionality for a more interactive experience.",
     "Image": "https://i.postimg.cc/bYT6L7tq/image.png",
@@ -92,7 +122,7 @@
     "video demo": ""
   },
   {
-    "id": 8,
+    "id": 11,
     "title": "Flappy Bird",
     "description": "Flappy Bird is a clone of the popular mobile game, built using HTML, CSS, and JavaScript.",
     "Image": "https://i.postimg.cc/s2kMQPCv/R.jpg",
