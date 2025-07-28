@@ -5,6 +5,18 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Serve sitemap.xml directly
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap.xml"
+status = 200
+
+# Serve robots.txt directly
+[[redirects]]
+from = "/robots.txt"
+to = "/robots.txt"
+status = 200
+
 # Serve static project HTML files
 [[redirects]]
   from = "/project/:id"
